@@ -1,0 +1,32 @@
+{
+  "name": "fundraiseup",
+  "version": "1.0.0",
+  "description": "test task",
+  "main": "index.js",
+  "scripts": {
+    "tsc": "tsc",
+    "start:app:dev": "nodemon --exec ts-node src/app.ts",
+    "start:real_time_sync:dev": "nodemon --exec ts-node src/sync.ts",
+    "start:full_sync:dev": "nodemon --exec ts-node src/sync.ts --full-reindex",
+    "start:app": "node dist/app.js",
+    "start:real_time_sync": "node dist/sync.js",
+    "start:full_sync": "node dist/sync.js --full-reindex",
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/mongoose": "^5.11.97",
+    "@types/node": "^20.2.5",
+    "dotenv": "^16.0.3",
+    "nodemon": "^2.0.22",
+    "prettier": "^2.8.8",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^8.0.1",
+    "mongoose": "^7.2.1"
+  }
+}
