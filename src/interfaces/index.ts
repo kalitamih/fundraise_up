@@ -1,7 +1,7 @@
-import { TDocumentId, TLastAnomizedDocumentData, TCustomer } from '../types';
+import { TDocumentId, TLastAnonymizedDocumentData, TCustomer } from '../types';
 
-export interface ILastAnomizedDocumentDataRepository {
-    retrieveLastAnomizedDocumentData(): Promise<TLastAnomizedDocumentData>;
+export interface ILastAnonymizedDocumentDataRepository {
+    retrieveLastAnonymizedDocumentData(): Promise<TLastAnonymizedDocumentData>;
     updateResumeToken(resumeToken: string): Promise<void>;
     updateLastSynchonizedDocumentId(lastSynchonizedDocumentId: TDocumentId): Promise<void>;
 }

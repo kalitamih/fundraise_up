@@ -1,2 +1,2 @@
-export { realTimeSyncController } from './realTimeSyncController';
-export { fullSyncController } from './fullSyncController';
+export { realTimeAnonymizeController } from './realTimeAnonymizeController';
+export { fullAnonymizeController } from './fullAnonymizeController';

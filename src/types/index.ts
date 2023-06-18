@@ -9,7 +9,7 @@ type TAddress = {
     country: string;
 };
 
-export type TLastAnomizedDocumentData = {
+export type TLastAnonymizedDocumentData = {
     resumeToken: string;
     lastSynchonizedDocumentId: Schema.Types.ObjectId;
 };
@@ -25,7 +25,7 @@ export type TCustomer = {
     created_at?: Date;
 };
 
-export type TLastAnomizedDocumentDataDocument = TLastAnomizedDocumentData & Document;
+export type TLastAnonymizedDocumentDataDocument = TLastAnonymizedDocumentData & Document;
 
 export type TChangeEvent = {
     _id: { _data: string };

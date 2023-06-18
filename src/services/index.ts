@@ -1,5 +1,6 @@
-export { anonymisedCustomerService } from './anonymisedCustomerService';
-export { customerService } from './customerService';
-export { lastAnomizedDocumentDataService } from './lastAnomizedDocumentService';
-export { fullSynсService } from './fullSyncService';
-export { customerAnomizerService } from './customerAnomizerService';
+export { lastAnonymizedDocumentDataService, LastAnonymizedDocumentDataService } from './lastAnonymizedDocumentService';
+export { customerAnonymizerService, CustomerAnonymizerService } from './customerAnomizerService';
+export { anonymisedCustomerService, AnonymisedCustomerService } from './anonymisedCustomerService';
+export { customerService, CustomerService } from './customerService';
+export { fullAnonymizeService, FullAnonymizeService } from './fullAnonymizeService';
+export { realTimeAnonymizeService, RealTimeAnonymizeService } from './realTimeAnonymizeService';

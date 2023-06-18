@@ -1,6 +1,6 @@
 import mongoose, { Schema } from 'mongoose';
 
-export const LastAnomizedDocumentDataSchema = new Schema({
+export const LastAnonymizedDocumentDataSchema = new Schema({
     resumeToken: {
         type: String,
     },
@@ -9,8 +9,8 @@ export const LastAnomizedDocumentDataSchema = new Schema({
     },
 });
 
-export const LastAnomizedDocumentDataModel = mongoose.model(
-    'last_anomized_document_data',
-    LastAnomizedDocumentDataSchema,
-    'last_anomized_document_data',
+export const LastAnonymizedDocumentDataModel = mongoose.model(
+    'last_anonymized_document_data',
+    LastAnonymizedDocumentDataSchema,
+    'last_anonymized_document_data',
 );

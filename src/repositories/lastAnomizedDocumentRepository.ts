@@ -1,30 +1,30 @@
-import { ILastAnomizedDocumentDataRepository } from '../interfaces';
-import { LastAnomizedDocumentDataModel } from '../models';
-import { TDocumentId, TLastAnomizedDocumentData, TLastAnomizedDocumentDataDocument } from '../types';
+import { ILastAnonymizedDocumentDataRepository } from '../interfaces';
+import { LastAnonymizedDocumentDataModel } from '../models';
+import { TDocumentId, TLastAnonymizedDocumentData, TLastAnonymizedDocumentDataDocument } from '../types';
 
-class LastAnomizedDocumentDataRepository implements ILastAnomizedDocumentDataRepository {
-    public async retrieveLastAnomizedDocumentData(): Promise<TLastAnomizedDocumentData> {
-        let lastAnomizedDocumentData: TLastAnomizedDocumentDataDocument | null =
-            await LastAnomizedDocumentDataModel.findOne();
+class LastAnonymizedDocumentDataRepository implements ILastAnonymizedDocumentDataRepository {
+    public async retrieveLastAnonymizedDocumentData(): Promise<TLastAnonymizedDocumentData> {
+        let lastAnonymizedDocumentData: TLastAnonymizedDocumentDataDocument | null =
+            await LastAnonymizedDocumentDataModel.findOne();
 
-        if (!lastAnomizedDocumentData) {
-            await LastAnomizedDocumentDataModel.insertMany([{ resumeToken: null, lastSynchonizedDocumentId: null }]);
-            lastAnomizedDocumentData = await LastAnomizedDocumentDataModel.findOne();
+        if (!lastAnonymizedDocumentData) {
+            await LastAnonymizedDocumentDataModel.insertMany([{ resumeToken: null, lastSynchonizedDocumentId: null }]);
+            lastAnonymizedDocumentData = await LastAnonymizedDocumentDataModel.findOne();
         }
 
         const { lastSynchonizedDocumentId, resumeToken } =
-            lastAnomizedDocumentData as TLastAnomizedDocumentDataDocument;
+            lastAnonymizedDocumentData as TLastAnonymizedDocumentDataDocument;
 
         return { lastSynchonizedDocumentId, resumeToken };
     }
 
     public async updateResumeToken(resumeToken: string): Promise<void> {
-        await LastAnomizedDocumentDataModel.updateOne({}, { resumeToken });
+        await LastAnonymizedDocumentDataModel.updateOne({}, { resumeToken });
     }
 
     public async updateLastSynchonizedDocumentId(lastSynchonizedDocumentId: TDocumentId): Promise<void> {
-        await LastAnomizedDocumentDataModel.updateOne({}, { lastSynchonizedDocumentId });
+        await LastAnonymizedDocumentDataModel.updateOne({}, { lastSynchonizedDocumentId });
     }
 }
 
-export const lastAnomizedDocumentDataRepository = new LastAnomizedDocumentDataRepository();
+export const lastAnonymizedDocumentDataRepository = new LastAnonymizedDocumentDataRepository();

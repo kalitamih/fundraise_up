@@ -9,9 +9,9 @@ class AnonymisedCustomerRepository implements IAnonymisedCustomerRepository {
             await AnonymisedCustomerModel.insertMany(documents, { ordered: false });
         } catch (err) {
             if (err instanceof Error && err.message.indexOf(DUPLICATE_KEY_ERROR) !== -1) {
-                console.log(err.message);
+                console.log('AnonymisedCustomerRepository.insertMany', err.message);
             } else {
-                console.log('Unexpected error', err);
+                console.log('AnonymisedCustomerRepository.insertMany Unexpected error', err);
                 throw err;
             }
         }
